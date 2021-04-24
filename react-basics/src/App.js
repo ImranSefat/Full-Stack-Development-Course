@@ -1,27 +1,21 @@
 import './App.css';
-import SayMyName from './Components/SayMyName';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+import Home from './Components/Home';
+import { GlobalStyle } from './Styles/GlobalbStyle';
 
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-
-        <SayMyName name="Imran" age="23" university="BRAC University" />
-
-
+    <div >
+      <GlobalStyle />
+      <header>
+        <Router>
+          <Route path="/" exact component={Home} />
+        </Router>
       </header>
     </div>
   );
-}
-
-function myComponent() {
-  return <>
-    <h1>This is a header 1 </h1>
-    <p>This is a paragraph</p>
-
-  </>
 }
 
 export default App;
