@@ -39,7 +39,7 @@ export default function Blogs({ blog }) {
             </Head>
 
 
-            <div className="m-20 ">
+            <div className="sm:mx-20 lg:mx-32 xl:mx-96">
                 <div className="flex flex-col items-center">
                     <Image src={'https:' + featuredImage.fields.file.url}
                         width={featuredImage.fields.file.details.image.width}
@@ -49,7 +49,7 @@ export default function Blogs({ blog }) {
                 </div>
 
 
-                <div className="mt-20 mx-20 p-5">
+                <div className="my-12">
                     <p className="text-5xl font-serif my-4">{title}</p>
                     <p className="text-xl  text-gray-500">{'Reading Time : ' + readingTime + ' minutes'}</p>
 
@@ -61,13 +61,11 @@ export default function Blogs({ blog }) {
                         ))}
                     </div>
 
-                    <div className="prose">
-                        {documentToReactComponents(content)}
-                    </div>
+
                 </div>
-
-
-
+                <article className="unprose prose-xl">
+                    {documentToReactComponents(content)}
+                </article>
 
             </div>
 
